@@ -1,0 +1,3 @@
+select *
+from v$locked_object l, dba_objects o, v$session s, v$process p
+where l.object_id = o.object_id and l.session_id = s.sid and s.paddr = p.addr
